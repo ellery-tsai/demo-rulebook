@@ -10,5 +10,4 @@
     - name: Say Hello
       condition: event.payload.message == "foo"
       action:
-        run_playbook:
-          name: say-what.yml
+        debug:
