@@ -8,7 +8,9 @@
         port: 8000
 
   rules:
-    - name: Say Hello
-      condition: event.payload.message == "foo"
+    - name: Run job template
+      condition: event.url_check.status_code == 200
       action:
-        debug:
+        run_job_template:
+          organization: Default
+          name: "Demo Job Template"
